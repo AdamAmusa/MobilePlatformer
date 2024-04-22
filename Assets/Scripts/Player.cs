@@ -15,9 +15,11 @@ public class Player : MonoBehaviour
     DestroyedEnemies destroyedEnemies;
 
     Lives liveObject;
+    public AudioManager audioObject;
     // Start is called before the first frame update
     void Start()
     {
+        audioObject = GameObject.FindObjectOfType<AudioManager>();
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
         load = GameObject.FindObjectOfType<LoadLevels>();
         destroyedEnemies = GameObject.FindObjectOfType<DestroyedEnemies>();
@@ -106,7 +108,9 @@ public class Player : MonoBehaviour
          if (other.gameObject.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
+            audioObject.PlayCollect();
             coinObject.addCoins();
+
 
         }
 

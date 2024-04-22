@@ -18,8 +18,11 @@ public class PlayerMovement : MonoBehaviour
     public float jumpBoost;
     public float jumpBoostTime = 10.0f;
 
+    public AudioManager audioObject;
+
     void Start()
     {
+        audioObject = FindObjectOfType<AudioManager>();
         movement = playerInput.actions.FindAction("Movement");
         jump = playerInput.actions.FindAction("Jump");
         rb = GetComponent<Rigidbody2D>();
@@ -55,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump(){
         if(jump.triggered && grounded){
+            audioObject.PlayJump();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
