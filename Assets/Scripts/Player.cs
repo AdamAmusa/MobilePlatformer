@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     PlayerMovement playerMovement;
 
     Coins coinObject;
+    LoadLevels load;
     DestroyedEnemies destroyedEnemies;
 
     Lives liveObject;
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
+        load = GameObject.FindObjectOfType<LoadLevels>();
         destroyedEnemies = GameObject.FindObjectOfType<DestroyedEnemies>();
         superAbility = transform.Find("SuperAbility").gameObject;
         coinObject = GameObject.FindObjectOfType<Coins>();
@@ -58,6 +60,7 @@ public class Player : MonoBehaviour
         if (liveObject.GetLives() == 0)
         {
             Destroy(this.gameObject);
+            load.reloadLevel();
         }
     }
 
@@ -93,6 +96,7 @@ public class Player : MonoBehaviour
             }
             else{
                 Destroy(other.gameObject);
+                
             }
         }
 

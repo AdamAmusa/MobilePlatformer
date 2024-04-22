@@ -32,6 +32,8 @@ public class Coins : MonoBehaviour
         Collider2D enemyCollider = other.gameObject.GetComponent<Collider2D>();
         Physics2D.IgnoreCollision(coinCollider, enemyCollider);
         }
+
+        
     }   
     
 }
