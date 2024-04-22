@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
         Debug.Log(playerMovement.isBoostJumpEnabled());
     }
 
+    //Done on Film *SuperAbility*
     void disableAbility()
     {
         superAbility.SetActive(false);
@@ -77,6 +78,7 @@ public class Player : MonoBehaviour
             Debug.Log("Lives:" + liveObject.GetLives());
         }
 
+        //Done on Film *SuperAbility*
         if (isAbilityActive() && other.gameObject.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
@@ -87,6 +89,7 @@ public class Player : MonoBehaviour
 
      if (other.gameObject.CompareTag("Bullet"))
         {
+            //Done on Film *SuperAbility*
             if (!isAbilityActive())
             {   
                 Destroy(other.gameObject);
@@ -114,7 +117,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("SuperAbility"))
         {
             Destroy(other.gameObject);
-            enableAbility();
+            enableAbility();//Done on Film *SuperAbility*
 
         }
 
