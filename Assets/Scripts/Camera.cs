@@ -23,6 +23,7 @@ public class Camera : MonoBehaviour
         
         if (target != null)
         {
+            // Smoothly move the camera towards that target position
             Vector3 targetPosition = target.position + offset;
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
         }
