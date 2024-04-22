@@ -26,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
 
 
 
+
     void Patrol(){
         Vector2 point = currentPoint.position - transform.position;
         if(currentPoint == pointB.transform){
@@ -35,10 +36,11 @@ public class EnemyMovement : MonoBehaviour
             rb.velocity = new Vector2(-speed,0); //Move left
         }
         
-
+        //Change direction
         if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform){
             currentPoint = pointA.transform;
         }
+        //Change direction
         else if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform){
             currentPoint = pointB.transform;
         }

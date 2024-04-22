@@ -19,7 +19,7 @@ public class LoadLevels : MonoBehaviour
     }
 
  
-
+    //function to reload the level
     public void reloadLevel(){
         life.resetLife();
         coinObject.resetCoins();
@@ -27,17 +27,19 @@ public class LoadLevels : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    //function to start the game
     public void startGame(){
         life.resetLife();
         coinObject.resetCoins();
         destroyedObject.resetDestroyedEnemies();
         SceneManager.LoadScene(0);
     }
-
+    //function to quit the game
     public void quitGame(){
         Application.Quit();
     }
 
+    //function to load the next level
     public void loadNextLevel(){
         life.resetLife();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -45,6 +47,7 @@ public class LoadLevels : MonoBehaviour
 
 
 
+    //function to load the menu
     public void loadMenu(){
         life.resetLife();
         coinObject.resetCoins();

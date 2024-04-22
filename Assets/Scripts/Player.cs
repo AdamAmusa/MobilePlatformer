@@ -42,22 +42,21 @@ public class Player : MonoBehaviour
         superAbility.SetActive(false);
     }
 
+    //Done on Film *SuperAbility*
     void enableAbility()
     {
         superAbility.SetActive(true);
         Invoke("disableAbility", 10.0f); //disables the ability after 10 seconds
     }
 
+
+    //function to check if the ability is active
     bool isAbilityActive()
     {
         return superAbility.activeSelf;
     }
 
-    bool isSuperJumpActive()
-    {
-        return superAbility.activeSelf;
-    }
-
+    //function to check if the player is alive
     void checkifAlive()
     {
         if (liveObject.GetLives() == 0)
@@ -69,9 +68,11 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
+        //Check if player collides with enemy
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Spikes"))
         {
             Debug.Log("Player collided with enemy");
+            //if ability is not active, decrease lives
             if (!isAbilityActive())
             {
                 liveObject.DecreaseLives();
@@ -88,23 +89,25 @@ public class Player : MonoBehaviour
             Debug.Log("Ability used");
         }
 
-
+    //if player collides with bullet
      if (other.gameObject.CompareTag("Bullet"))
         {
             //Done on Film *SuperAbility*
             if (!isAbilityActive())
             {   
                 Destroy(other.gameObject);
+                //if ability is not active, decrease lives
                 liveObject.DecreaseLives();
                Debug.Log("Bullet: takes life");
                 
             }
             else{
+                //if ability is active, destroy the bullet
                 Destroy(other.gameObject);
                 
             }
         }
-
+        //if player collides with coin
          if (other.gameObject.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
