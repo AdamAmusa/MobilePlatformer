@@ -594,7 +594,7 @@ Canvas:
   m_GameObject: {fileID: 703019228}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 808571959}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1072,9 +1072,17 @@ PrefabInstance:
       value: GameController
       objectReference: {fileID: 0}
     - target: {fileID: 1586160741390480114, guid: be79fff59bbcca54ab9eae3ff2873ed9, type: 3}
+      propertyPath: coinText
+      value: 
+      objectReference: {fileID: 113838226}
+    - target: {fileID: 1586160741390480114, guid: be79fff59bbcca54ab9eae3ff2873ed9, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1586160741390480114, guid: be79fff59bbcca54ab9eae3ff2873ed9, type: 3}
+      propertyPath: damageText
+      value: 
+      objectReference: {fileID: 1622029838}
     - target: {fileID: 1875707927789471799, guid: be79fff59bbcca54ab9eae3ff2873ed9, type: 3}
       propertyPath: m_Enabled
       value: 0

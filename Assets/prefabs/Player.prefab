@@ -312,7 +312,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -341,9 +341,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 1171551844446597856, guid: 33a94969a30c14a409e42d7260e63fd3, type: 3}
-  speed: 6
-  jumpForce: 13
+  speed: 8
+  jumpForce: 12
   jumpBoost: 2
+  jumpBoostTime: 3
 --- !u!1 &8180763122351857041
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,9 +21,5 @@ public class EndGameUI : MonoBehaviour
         damageText.text = "Enemies Destroyed: " + destroyObject.getDestroyedEnemies().ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
