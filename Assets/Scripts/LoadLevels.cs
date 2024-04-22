@@ -42,4 +42,13 @@ public class LoadLevels : MonoBehaviour
         life.resetLife();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }   
+
+
+
+    public void loadMenu(){
+        life.resetLife();
+        coinObject.resetCoins();
+        destroyedObject.resetDestroyedEnemies();
+        SceneManager.LoadScene(4);
+    }
 }

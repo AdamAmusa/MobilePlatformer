@@ -17,8 +17,8 @@ public class EndGameUI : MonoBehaviour
     {
         coinObject = FindObjectOfType<Coins>();
         destroyObject = FindObjectOfType<DestroyedEnemies>();
-        coinText.text = "Coins Collected: " + coinObject.getCoins().ToString();
-        damageText.text = "Enemies Destroyed: " + destroyObject.getDestroyedEnemies().ToString();
+        coinText.text = coinObject.getCoins().ToString();
+        damageText.text = destroyObject.getDestroyedEnemies().ToString();
     }
 
    
