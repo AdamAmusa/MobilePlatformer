@@ -29,16 +29,19 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    //jump boost
     public void boostJump(){
         originalJumpForce = jumpForce;
         jumpForce *= jumpBoost;
         Invoke("resetJump", jumpBoostTime);
     }
 
+    //reset jump
     public void resetJump(){
         jumpForce = originalJumpForce;
     }
 
+    //check if boost jump is enabled
     public bool isBoostJumpEnabled(){
         return jumpForce == originalJumpForce * jumpBoost;
     }
@@ -49,13 +52,14 @@ public class PlayerMovement : MonoBehaviour
          Jump();
     }
 
+    //move player
     void movePlayer(){
         Vector2 direction = movement.ReadValue<Vector2>();
         transform.position += new Vector3(direction.x, 0, 0) * speed * Time.deltaTime;
 
     }
 
-
+    //jump
     void Jump(){
         if(jump.triggered && grounded){
             audioObject.PlayJump();

@@ -14,6 +14,7 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Find the objects
         coinObject = GameObject.FindObjectOfType<Coins>();
         liveObject = GameObject.FindObjectOfType<Lives>();
         destroyedObject = GameObject.FindObjectOfType<DestroyedEnemies>();
@@ -22,6 +23,7 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Update the UI
         lifeText.text = "Lives: " + liveObject.GetLives();
         coinText.text = "Coins: " + coinObject.getCoins();
         destroyedText.text = "Destroyed: " + destroyedObject.getDestroyedEnemies();
